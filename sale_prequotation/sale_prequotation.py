@@ -335,7 +335,7 @@ class sale_prequotation(osv.osv):
                 'sale.prequotation.product': (_get_products, [], 20),
             },
             multi='all'),
-        'amount_labour_cost': fields.function(_amount_all, digits_compute=dp.get_precision('Account'), string='Total Labour Cost',
+        'amount_labour_cost': fields.function(_amount_all, digits_compute=dp.get_precision('Account'), string='Total Labour Cost', track_visibility='always',
             store={
                 'sale.prequotation': (lambda self, cr, uid, ids, c={}: ids, [], 20),
                 'sale.prequotation.labour': (_get_labour, ['price_unit', 'invoice_line_tax_id', 'quantity', 'discount', 'invoice_id'], 20),
@@ -347,7 +347,7 @@ class sale_prequotation(osv.osv):
                 'sale.prequotation.product': (_get_products, [], 20),
             },
             multi='all'),
-        'amount_labour_sale': fields.function(_amount_all, digits_compute=dp.get_precision('Account'), string='Total Labour',
+        'amount_labour_sale': fields.function(_amount_all, digits_compute=dp.get_precision('Account'), string='Total Labour', track_visibility='always',
             store={
                 'sale.prequotation': (lambda self, cr, uid, ids, c={}: ids, [], 20),
                 'sale.prequotation.labour': (_get_labour, ['price_unit', 'invoice_line_tax_id', 'quantity', 'discount', 'invoice_id'], 20),
