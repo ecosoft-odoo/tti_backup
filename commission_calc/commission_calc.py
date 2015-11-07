@@ -366,7 +366,7 @@ class commission_worksheet(osv.osv):
                     accumulated_amt += amount_to_accumulate
                     # accumulated_amt += order.amount_net
                     commission_amt = self._calculate_commission(cr, uid, rule, amount_to_accumulate, accumulated_amt, context=context)
-
+                    commission_amt = commission_amt * rule_condition.commission_coeff
                 res = {
                     'commission_worksheet_id': worksheet.id,
                     'order_id': order.id,

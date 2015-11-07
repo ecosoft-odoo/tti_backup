@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <openerp>
-    <data noupdate="0">
+    <data noupdate="1">
 
 		<!-- 1. Commission Rule for Manager -->
 		<record id="commission_rule_for_manager" model="commission.rule">
