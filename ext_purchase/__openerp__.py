@@ -36,7 +36,9 @@ Features
     'sequence': 8,
     'website' : 'http://www.ecosoft.co.th',
     'images' : [],
-    'depends' : ['purchase'],
+    'depends' : ['purchase',
+                 'advance_and_additional_discount',
+                 ],
     'demo' : [],
     'data' : [
         'purchase_order_view.xml',
