@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Quotation" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
-	<property name="ireport.zoom" value="1.2396694214876145"/>
+	<property name="ireport.zoom" value="0.6997610703146067"/>
 	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="752"/>
+	<property name="ireport.y" value="240"/>
 	<property name="OPENERP_RELATIONS" value="[&quot;order_line&quot;]"/>
 	<import value="org.apache.commons.codec.binary.Base64"/>
 	<style name="table" lineSpacing="Single">
@@ -239,9 +239,9 @@
 				<textElement textAlignment="Center" markup="none">
 					<font size="24"/>
 				</textElement>
-				<text><![CDATA[We are one stop shop & Enginering for
+				<text><![CDATA[We are one stop shop & Engineering for
  gas-Liquid sample conditioning System
- for analyer-GC
+ for analyser-GC
  Include CEMS Equipments]]></text>
 			</staticText>
 			<rectangle>
@@ -788,7 +788,7 @@ $F{product_uom}]]></textFieldExpression>
 				</textElement>
 			</textField>
 			<image>
-				<reportElement x="2" y="216" width="554" height="39"/>
+				<reportElement x="30" y="216" width="481" height="39"/>
 				<imageExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR}+"so_footer.png"]]></imageExpression>
 			</image>
 			<rectangle radius="10">
@@ -939,7 +939,7 @@ $F{product_uom}]]></textFieldExpression>
 				<text><![CDATA[กรณี สั่งซื้อสินค้าไม่ถึง 3,000 บาท ทางบริษัทจะจัดเก็บสินค้าเป็นเงินสดเท่านั้น]]></text>
 			</staticText>
 			<image>
-				<reportElement x="0" y="216" width="554" height="39"/>
+				<reportElement x="30" y="216" width="481" height="39"/>
 				<imageExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR}+"so_footer.png"]]></imageExpression>
 			</image>
 			<rectangle radius="10">
