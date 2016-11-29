@@ -464,7 +464,7 @@ $F{cust_order_shipto_name})]]></textFieldExpression>
 				<textElement lineSpacing="Single">
 					<font fontName="Monospaced" size="9" isBold="false" pdfFontName="Garuda.ttf" pdfEncoding="Identity-H" isPdfEmbedded="false"/>
 				</textElement>
-				<text><![CDATA[Tel: +66-38-872-091-2 Fax : +66-38-872-090]]></text>
+				<text><![CDATA[Tel: 66-38-017924-5 Fax: 66-38-017924-5 Ext.14]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="2" y="65" width="511" height="12"/>

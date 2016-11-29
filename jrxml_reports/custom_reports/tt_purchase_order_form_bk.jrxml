@@ -273,7 +273,7 @@
 				<textElement lineSpacing="Single">
 					<font fontName="Monospaced" size="9" isBold="false" pdfFontName="Garuda.ttf" pdfEncoding="Identity-H" isPdfEmbedded="false"/>
 				</textElement>
-				<text><![CDATA[Tel: +66-38-872-091-2 Fax : +66-38-872-090]]></text>
+				<text><![CDATA[Tel: 66-38-017924-5 Fax: 66-38-017924-5 Ext.14]]></text>
 			</staticText>
 			<rectangle radius="10">
 				<reportElement x="0" y="107" width="334" height="115"/>

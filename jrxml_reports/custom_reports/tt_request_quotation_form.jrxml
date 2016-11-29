@@ -198,7 +198,7 @@
 				<textElement textAlignment="Center" lineSpacing="Single">
 					<font fontName="Monospaced" size="9" isBold="false" pdfFontName="Garuda.ttf" pdfEncoding="Identity-H" isPdfEmbedded="false"/>
 				</textElement>
-				<text><![CDATA[TEL. 66-38-872091-2  FAX 66-38-872090  , Email : purchasing@tametech.co.th]]></text>
+				<text><![CDATA[Tel: 66-38-017924-5 Fax: 66-38-017924-5 Ext.14 , Email : purchasing@tametech.co.th]]></text>
 			</staticText>
 			<frame>
 				<reportElement x="2" y="109" width="553" height="26"/>

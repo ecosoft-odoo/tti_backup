@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Quotation" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
-	<property name="ireport.zoom" value="0.6997610703146067"/>
-	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="240"/>
+	<property name="ireport.zoom" value="1.1269722013523775"/>
+	<property name="ireport.x" value="8"/>
+	<property name="ireport.y" value="579"/>
 	<property name="OPENERP_RELATIONS" value="[&quot;order_line&quot;]"/>
 	<import value="org.apache.commons.codec.binary.Base64"/>
 	<style name="table" lineSpacing="Single">
@@ -491,7 +491,7 @@ We are pleased to quote our products for your valuable inquiry as following;]]><
 				<textElement lineSpacing="Single">
 					<font fontName="Monospaced" size="9" isBold="false" pdfFontName="Garuda.ttf" pdfEncoding="Identity-H" isPdfEmbedded="false"/>
 				</textElement>
-				<text><![CDATA[Tel: +66-38-872-091-2 Fax : +66-38-872-090]]></text>
+				<text><![CDATA[Tel: 66-38-017924-5 Fax: 66-38-017924-5 Ext.14]]></text>
 			</staticText>
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="false">
 				<reportElement positionType="Float" mode="Transparent" x="72" y="123" width="260" height="29" forecolor="#000000" backcolor="#FFFFFF"/>
@@ -788,7 +788,7 @@ $F{product_uom}]]></textFieldExpression>
 				</textElement>
 			</textField>
 			<image>
-				<reportElement x="30" y="216" width="481" height="39"/>
+				<reportElement x="0" y="216" width="554" height="39"/>
 				<imageExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR}+"so_footer.png"]]></imageExpression>
 			</image>
 			<rectangle radius="10">
@@ -939,7 +939,7 @@ $F{product_uom}]]></textFieldExpression>
 				<text><![CDATA[กรณี สั่งซื้อสินค้าไม่ถึง 3,000 บาท ทางบริษัทจะจัดเก็บสินค้าเป็นเงินสดเท่านั้น]]></text>
 			</staticText>
 			<image>
-				<reportElement x="30" y="216" width="481" height="39"/>
+				<reportElement x="0" y="216" width="554" height="39"/>
 				<imageExpression class="java.lang.String"><![CDATA[$P{SUBREPORT_DIR}+"so_footer.png"]]></imageExpression>
 			</image>
 			<rectangle radius="10">
@@ -1026,7 +1026,6 @@ $F{product_uom}]]></textFieldExpression>
 				<textElement textAlignment="Center" lineSpacing="Single">
 					<font fontName="Monospaced" size="9" pdfFontName="Garuda.ttf" pdfEncoding="Identity-H"/>
 				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA["(Phone no. "+ $V{manager_phone} +")"]]></textFieldExpression>
 			</textField>
 		</band>
 	</lastPageFooter>
