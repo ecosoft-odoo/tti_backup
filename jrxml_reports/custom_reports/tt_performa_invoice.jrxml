@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Invoice" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
-	<property name="ireport.zoom" value="1.9965000000000184"/>
-	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="240"/>
+	<property name="ireport.zoom" value="1.815000000000018"/>
+	<property name="ireport.x" value="277"/>
+	<property name="ireport.y" value="503"/>
 	<property name="OPENERP_RELATIONS" value="[&quot;invoice_line&quot;]"/>
 	<style name="table" lineSpacing="Single">
 		<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
@@ -209,6 +209,9 @@
 	</field>
 	<field name="INV Zip_1" class="java.lang.String">
 		<fieldDescription><![CDATA[sale_order_ids/partner_shipping_id/zip]]></fieldDescription>
+	</field>
+	<field name="amount_beforetax" class="java.lang.Number">
+		<fieldDescription><![CDATA[amount_beforetax]]></fieldDescription>
 	</field>
 	<variable name="Amount Total" class="java.lang.String">
 		<variableExpression><![CDATA[($F{Amount Total}==null?0.00:$F{Amount Total}).toString()]]></variableExpression>
@@ -644,34 +647,6 @@ $F{Unit}]]></textFieldExpression>
 				</textElement>
 				<text><![CDATA[Net Amount]]></text>
 			</staticText>
-			<textField>
-				<reportElement mode="Transparent" x="336" y="90" width="134" height="17" backcolor="#B5E7D3"/>
-				<textElement verticalAlignment="Top" lineSpacing="Single" markup="none">
-					<font fontName="Monospaced" size="9" isBold="false" pdfFontName="Garuda.ttf" pdfEncoding="Identity-H" isPdfEmbedded="false"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{vat_label}]]></textFieldExpression>
-			</textField>
-			<staticText>
-				<reportElement mode="Transparent" x="336" y="53" width="131" height="17" backcolor="#B5E7D3"/>
-				<textElement verticalAlignment="Top" lineSpacing="Single">
-					<font fontName="Monospaced" size="9" isBold="false" pdfFontName="Garuda.ttf" pdfEncoding="Identity-H" isPdfEmbedded="false"/>
-				</textElement>
-				<text><![CDATA[Discount]]></text>
-			</staticText>
-			<staticText>
-				<reportElement mode="Transparent" x="336" y="37" width="131" height="17" backcolor="#B5E7D3"/>
-				<textElement verticalAlignment="Top" lineSpacing="Single">
-					<font fontName="Monospaced" size="9" isBold="false" pdfFontName="Garuda.ttf" pdfEncoding="Identity-H" isPdfEmbedded="false"/>
-				</textElement>
-				<text><![CDATA[Amount]]></text>
-			</staticText>
-			<staticText>
-				<reportElement mode="Transparent" x="336" y="71" width="131" height="17" backcolor="#B5E7D3"/>
-				<textElement verticalAlignment="Top" lineSpacing="Single">
-					<font fontName="Monospaced" size="9" isBold="false" pdfFontName="Garuda.ttf" pdfEncoding="Identity-H" isPdfEmbedded="false"/>
-				</textElement>
-				<text><![CDATA[Gross Amount]]></text>
-			</staticText>
 			<frame>
 				<reportElement style="table" x="0" y="60" width="327" height="99"/>
 			</frame>
@@ -696,20 +671,51 @@ SWIFT CODE: TMBKTHBK]]></text>
 				</textElement>
 				<text><![CDATA[Remark: When paying by bank wire transfer, the customer is responsible for all fee incurred during this transaction.]]></text>
 			</staticText>
-		</band>
-	</pageFooter>
-	<lastPageFooter>
-		<band height="189" splitType="Stretch">
-			<frame>
-				<reportElement style="table" x="0" y="35" width="327" height="20"/>
-			</frame>
 			<staticText>
-				<reportElement mode="Transparent" x="336" y="37" width="131" height="17" backcolor="#B5E7D3"/>
+				<reportElement mode="Transparent" x="343" y="81" width="131" height="12" backcolor="#B5E7D3"/>
+				<textElement verticalAlignment="Top" lineSpacing="Single">
+					<font fontName="Monospaced" size="9" isBold="false" pdfFontName="Garuda.ttf" pdfEncoding="Identity-H" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[Before VAT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="343" y="66" width="131" height="12" backcolor="#B5E7D3"/>
+				<textElement verticalAlignment="Top" lineSpacing="Single">
+					<font fontName="Monospaced" size="9" isBold="false" pdfFontName="Garuda.ttf" pdfEncoding="Identity-H" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[Gross Amount]]></text>
+			</staticText>
+			<textField>
+				<reportElement mode="Transparent" x="343" y="96" width="131" height="12" backcolor="#B5E7D3"/>
+				<textElement verticalAlignment="Top" lineSpacing="Single" markup="none">
+					<font fontName="Monospaced" size="9" isBold="false" pdfFontName="Garuda.ttf" pdfEncoding="Identity-H" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{vat_label}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Transparent" x="343" y="36" width="131" height="12" backcolor="#B5E7D3"/>
 				<textElement verticalAlignment="Top" lineSpacing="Single">
 					<font fontName="Monospaced" size="9" isBold="false" pdfFontName="Garuda.ttf" pdfEncoding="Identity-H" isPdfEmbedded="false"/>
 				</textElement>
 				<text><![CDATA[Amount]]></text>
 			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="343" y="51" width="131" height="12" backcolor="#B5E7D3"/>
+				<textElement verticalAlignment="Top" lineSpacing="Single">
+					<font fontName="Monospaced" size="9" isBold="false" pdfFontName="Garuda.ttf" pdfEncoding="Identity-H" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[Discount]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<lastPageFooter>
+		<band height="189" splitType="Stretch">
+			<rectangle>
+				<reportElement mode="Transparent" x="331" y="35" width="224" height="75"/>
+			</rectangle>
+			<frame>
+				<reportElement style="table" x="0" y="35" width="327" height="20"/>
+			</frame>
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="false">
 				<reportElement mode="Transparent" x="2" y="37" width="319" height="17" forecolor="#000000" backcolor="#FFFFFF"/>
 				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" lineSpacing="Single" markup="none">
@@ -727,27 +733,6 @@ SWIFT CODE: TMBKTHBK]]></text>
 			<rectangle>
 				<reportElement mode="Transparent" x="331" y="115" width="224" height="44"/>
 			</rectangle>
-			<textField pattern="#,##0.00" isBlankWhenNull="false">
-				<reportElement mode="Opaque" x="467" y="53" width="86" height="17" forecolor="#000000" backcolor="#FFFFFF"/>
-				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" lineSpacing="Single" markup="none">
-					<font fontName="Monospaced" size="9" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Garuda.ttf" pdfEncoding="Identity-H" isPdfEmbedded="false"/>
-				</textElement>
-				<textFieldExpression class="java.lang.Number"><![CDATA[($F{Additional_Disct} == null ? 0.0 : $F{Additional_Disct})]]></textFieldExpression>
-			</textField>
-			<textField pattern="#,##0.00" isBlankWhenNull="false">
-				<reportElement mode="Opaque" x="467" y="90" width="86" height="17" forecolor="#000000" backcolor="#FFFFFF"/>
-				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" lineSpacing="Single" markup="none">
-					<font fontName="Monospaced" size="9" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Garuda.ttf" pdfEncoding="Identity-H" isPdfEmbedded="false"/>
-				</textElement>
-				<textFieldExpression class="java.lang.Number"><![CDATA[$F{Amount Tax}==null?0.0:$F{Amount Tax}]]></textFieldExpression>
-			</textField>
-			<textField pattern="#,##0.00" isBlankWhenNull="false">
-				<reportElement mode="Opaque" x="467" y="37" width="86" height="17" forecolor="#000000" backcolor="#FFFFFF"/>
-				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" lineSpacing="Single" markup="none">
-					<font fontName="Monospaced" size="9" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Garuda.ttf" pdfEncoding="Identity-H" isPdfEmbedded="false"/>
-				</textElement>
-				<textFieldExpression class="java.lang.Number"><![CDATA[($F{Total} == null ? 0.0 : $F{Total})]]></textFieldExpression>
-			</textField>
 			<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="false">
 				<reportElement mode="Opaque" x="466" y="120" width="86" height="15" forecolor="#000000" backcolor="#FFFFFF"/>
 				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" lineSpacing="Single" markup="none">
@@ -755,37 +740,6 @@ SWIFT CODE: TMBKTHBK]]></text>
 				</textElement>
 				<textFieldExpression class="java.lang.Number"><![CDATA[($F{Amount Total} == null ? 0.0 :$F{Amount Total})]]></textFieldExpression>
 			</textField>
-			<staticText>
-				<reportElement mode="Transparent" x="336" y="53" width="131" height="17" backcolor="#B5E7D3"/>
-				<textElement verticalAlignment="Top" lineSpacing="Single">
-					<font fontName="Monospaced" size="9" isBold="false" pdfFontName="Garuda.ttf" pdfEncoding="Identity-H" isPdfEmbedded="false"/>
-				</textElement>
-				<text><![CDATA[Discount]]></text>
-			</staticText>
-			<textField>
-				<reportElement mode="Transparent" x="336" y="90" width="134" height="17" backcolor="#B5E7D3"/>
-				<textElement verticalAlignment="Top" lineSpacing="Single" markup="none">
-					<font fontName="Monospaced" size="9" isBold="false" pdfFontName="Garuda.ttf" pdfEncoding="Identity-H" isPdfEmbedded="false"/>
-				</textElement>
-				<textFieldExpression class="java.lang.String"><![CDATA[$F{vat_label}]]></textFieldExpression>
-			</textField>
-			<textField pattern="#,##0.00" isBlankWhenNull="false">
-				<reportElement mode="Opaque" x="467" y="71" width="86" height="17" forecolor="#000000" backcolor="#FFFFFF"/>
-				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" lineSpacing="Single" markup="none">
-					<font fontName="Monospaced" size="9" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Garuda.ttf" pdfEncoding="Identity-H" isPdfEmbedded="false"/>
-				</textElement>
-				<textFieldExpression class="java.lang.Number"><![CDATA[($F{amount_net} == null ? 0.0 : $F{amount_net})]]></textFieldExpression>
-			</textField>
-			<staticText>
-				<reportElement mode="Transparent" x="336" y="71" width="131" height="17" backcolor="#B5E7D3"/>
-				<textElement verticalAlignment="Top" lineSpacing="Single">
-					<font fontName="Monospaced" size="9" isBold="false" pdfFontName="Garuda.ttf" pdfEncoding="Identity-H" isPdfEmbedded="false"/>
-				</textElement>
-				<text><![CDATA[Gross Amount]]></text>
-			</staticText>
-			<rectangle>
-				<reportElement mode="Transparent" x="331" y="35" width="224" height="75"/>
-			</rectangle>
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="false">
 				<reportElement mode="Transparent" x="39" y="5" width="215" height="24" forecolor="#000000" backcolor="#FFFFFF"/>
 				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" lineSpacing="Single" markup="none">
@@ -817,6 +771,76 @@ SWIFT CODE: TMBKTHBK]]></text>
 				</textElement>
 				<text><![CDATA[Remark: When paying by bank wire transfer, the customer is responsible for all fee incurred during this transaction.]]></text>
 			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="332" y="67" width="131" height="12" backcolor="#B5E7D3"/>
+				<textElement verticalAlignment="Top" lineSpacing="Single">
+					<font fontName="Monospaced" size="9" isBold="false" pdfFontName="Garuda.ttf" pdfEncoding="Identity-H" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[Gross Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="332" y="37" width="131" height="12" backcolor="#B5E7D3"/>
+				<textElement verticalAlignment="Top" lineSpacing="Single">
+					<font fontName="Monospaced" size="9" isBold="false" pdfFontName="Garuda.ttf" pdfEncoding="Identity-H" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Transparent" x="332" y="52" width="131" height="12" backcolor="#B5E7D3"/>
+				<textElement verticalAlignment="Top" lineSpacing="Single">
+					<font fontName="Monospaced" size="9" isBold="false" pdfFontName="Garuda.ttf" pdfEncoding="Identity-H" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[Discount]]></text>
+			</staticText>
+			<textField pattern="#,##0.00" isBlankWhenNull="false">
+				<reportElement mode="Opaque" x="435" y="37" width="118" height="12" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" lineSpacing="Single" markup="none">
+					<font fontName="Monospaced" size="9" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Garuda.ttf" pdfEncoding="Identity-H" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Number"><![CDATA[($F{Total} == null ? 0.0 : $F{Total})]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="false">
+				<reportElement mode="Opaque" x="435" y="97" width="118" height="12" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" lineSpacing="Single" markup="none">
+					<font fontName="Monospaced" size="9" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Garuda.ttf" pdfEncoding="Identity-H" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Number"><![CDATA[$F{Amount Tax}==null?0.0:$F{Amount Tax}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="false">
+				<reportElement mode="Opaque" x="435" y="67" width="118" height="12" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" lineSpacing="Single" markup="none">
+					<font fontName="Monospaced" size="9" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Garuda.ttf" pdfEncoding="Identity-H" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Number"><![CDATA[($F{amount_net} == null ? 0.0 : $F{amount_net})]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="false">
+				<reportElement mode="Opaque" x="435" y="52" width="118" height="12" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" lineSpacing="Single" markup="none">
+					<font fontName="Monospaced" size="9" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Garuda.ttf" pdfEncoding="Identity-H" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Number"><![CDATA[($F{Additional_Disct} == null ? 0.0 : $F{Additional_Disct})]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Transparent" x="332" y="82" width="131" height="12" backcolor="#B5E7D3"/>
+				<textElement verticalAlignment="Top" lineSpacing="Single">
+					<font fontName="Monospaced" size="9" isBold="false" pdfFontName="Garuda.ttf" pdfEncoding="Identity-H" isPdfEmbedded="false"/>
+				</textElement>
+				<text><![CDATA[Before VAT]]></text>
+			</staticText>
+			<textField>
+				<reportElement mode="Transparent" x="332" y="97" width="131" height="12" backcolor="#B5E7D3"/>
+				<textElement verticalAlignment="Top" lineSpacing="Single" markup="none">
+					<font fontName="Monospaced" size="9" isBold="false" pdfFontName="Garuda.ttf" pdfEncoding="Identity-H" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{vat_label}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="false">
+				<reportElement mode="Opaque" x="435" y="82" width="118" height="12" forecolor="#000000" backcolor="#FFFFFF"/>
+				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" lineSpacing="Single" markup="none">
+					<font fontName="Monospaced" size="9" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Garuda.ttf" pdfEncoding="Identity-H" isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Number"><![CDATA[$F{amount_beforetax}==null?0.0:$F{amount_beforetax}]]></textFieldExpression>
+			</textField>
 		</band>
 	</lastPageFooter>
 </jasperReport>
