@@ -2,7 +2,7 @@
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
-#    Copyright (C) 2004-2010 Tiny SPRL (<http://tiny.be>).
+#    Copyright (C) 2013 Ecosoft Co., Ltd. (http://ecosoft.co.th).
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,18 +19,26 @@
 #
 ##############################################################################
 
-from openerp.osv import osv 
-
-class periodic_inventory_valuation(osv.osv):
-    
-    _inherit = "periodic.inventory.valuation"
-    
-    def exchange(self, cr, uid, ids, from_amount, to_currency_id, from_currency_id, exchange_date, context=None):
-        if context is None:
-            context = {}
-        context.update({'pricelist_type': 'purchase'})
-        return super(periodic_inventory_valuation, self).exchange(cr, uid, ids, from_amount, to_currency_id, from_currency_id, exchange_date, context=context)
-    
-periodic_inventory_valuation()
+{
+    'name': 'Invoice Freight Allocation',
+    'version': '1.0',
+    'author': 'Ecosoft',
+    'summary': 'Allocate amount of Freight Invoice to other Supplier Invoice',
+    'description': """
+    """,
+    'category': 'Accounting',
+    'website': 'http://www.ecosoft.co.th',
+    'images': [],
+    'depends': ['account', 'web_m2x_options'],
+    'demo': [],
+    'data': [
+        'account_invoice_view.xml',
+    ],
+    'test': [
+    ],
+    'auto_install': False,
+    'application': True,
+    'installable': True,
+}
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

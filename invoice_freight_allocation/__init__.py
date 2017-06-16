@@ -19,18 +19,6 @@
 #
 ##############################################################################
 
-from openerp.osv import osv 
-
-class periodic_inventory_valuation(osv.osv):
-    
-    _inherit = "periodic.inventory.valuation"
-    
-    def exchange(self, cr, uid, ids, from_amount, to_currency_id, from_currency_id, exchange_date, context=None):
-        if context is None:
-            context = {}
-        context.update({'pricelist_type': 'purchase'})
-        return super(periodic_inventory_valuation, self).exchange(cr, uid, ids, from_amount, to_currency_id, from_currency_id, exchange_date, context=context)
-    
-periodic_inventory_valuation()
+import account_invoice
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
