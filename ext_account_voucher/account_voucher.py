@@ -19,37 +19,40 @@
 #
 ##############################################################################
 
-from openerp.osv import osv
-
+import netsvc
+from osv import osv,fields
+from tools.translate import _
+import time
 
 class account_voucher(osv.osv):
-
+    
     _inherit = 'account.voucher'
-
+    
     def recompute_voucher_lines(self, cr, uid, ids, partner_id, journal_id, price, currency_id, ttype, date, context=None):
         res = super(account_voucher, self).recompute_voucher_lines(cr, uid, ids, partner_id, journal_id, price, currency_id, ttype, date, context=context)
-        rec_count = len(res['value']['line_cr_ids'])
-        i = 0
-        # In case due date in line greater than current due date ,it will delete.
-        while i < rec_count:
+        
+        rec_count= len(res['value']['line_cr_ids'])
+        i=0
+        #in case due date in line greater than current due date ,it will delete.
+        while i<rec_count:
             record = res['value']['line_cr_ids'][i]
-            if (not record.get('date_due', False)) or record['date_due'] > date:
+            if (not record.get('date_due',False )) or record['date_due'] > date:
                 del res['value']['line_cr_ids'][i]
-                rec_count = len(res['value']['line_cr_ids'])
-            else:
-                i += 1
-
-        rec_count = len(res['value']['line_dr_ids'])
-        i = 0
-        # In case due date in line greater than current due date ,it will delete.
-        while i < rec_count:
+                rec_count= len(res['value']['line_cr_ids'])
+            else:                   
+                i+=1            
+        
+        rec_count= len(res['value']['line_dr_ids'])
+        i=0
+        #in case due date in line greater than current due date ,it will delete.
+        while i<rec_count:
             record = res['value']['line_dr_ids'][i]
-            if (not record.get('date_due', False)) or record['date_due'] > date:
+            if (not record.get('date_due',False )) or record['date_due'] > date:
                 del res['value']['line_dr_ids'][i]
-                rec_count = len(res['value']['line_dr_ids'])
-            else:
-                i += 1
-        return res
-
+                rec_count= len(res['value']['line_dr_ids'])
+            else:                   
+                i+=1            
+        return res 
+   
 account_voucher()
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

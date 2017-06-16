@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="invoice_supplier_form_ext" model="ir.ui.view">
+		    <field name="name">invoice.supplier.form.ext</field>
+		    <field name="model">account.invoice</field>
+		    <field name="type">form</field>
+		    <field name="inherit_id" ref="account.invoice_supplier_form"/>
+		    <field name="arch" type="xml">
+                <data>
+                    <xpath expr="/form/sheet/notebook/page[@string='Invoice']" position="after">
+                        <page string="Freight Allocation">
+                        	<field name="freight_alloc_ids">
+                                <tree string="Freight Allocation" editable="bottom">
+                                    <field name="invoice_id" invisible="1"/>
+                                    <field name="supplier_invoice_id" options="{'limit': 10, 'create': false, 'create_edit': false}"/>
+                                    <field name="amount_alloc" sum="Total Allocation"/>
+                        		</tree>
+                        	</field>
+                        </page>                    
+                    </xpath>
+				</data>
+			</field>
+		</record>
+	</data>
+</openerp>
